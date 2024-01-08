@@ -21,13 +21,13 @@
                         this.echo('');
                         this.echo('List of commands');
                         this.echo('');
-                        this.echo('hello <Your name> - Welcome message');
+                        this.echo('Im <Your name> - Welcome message');
+                        this.echo('ayush - Shows my photo');
+                        this.echo('refresh - Refresh the terminal');
+                        this.echo('cat <Width> <Height> - Takes you to google');
+                        this.echo('pic <Object> <Width> <Height> - Shows a random picture of "Object" with given width and height');
                         this.echo('link <Complete url> - Provides link to your url');
                         this.echo('bye - Takes you to google');
-                        this.echo('cat <Width> <Height> - Takes you to google');
-                        this.echo('ayush - Shows my photo');
-                        this.echo('pic <Object> <Width> <Height> - Shows a random picture of "Object" with given width and height');
-                        this.echo('refresh - Refresh the terminal');
                         this.echo('');
                     },
                     // Joke function
@@ -53,7 +53,7 @@
                             }.bind(this) // Ensure 'this' refers to the appropriate context
                         });
                     },
-                    hello: function (name) {
+                    Im: function (name) {
                         this.echo('Hello, ' + name + '. Wellcome to this terminal.');
                         this.echo('');
                     },
