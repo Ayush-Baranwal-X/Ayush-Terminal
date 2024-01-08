@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="terminal_main.js"></script>
+    <script src="terminal.js"></script>
+    <link rel="stylesheet" href="terminal.css" />
+</head>
+
+<body>
+    <script>
+        $('body').terminal
+            (
+                {
+                    // Function to print something
+                    help: function () {
+                        this.echo('');
+                        this.echo('Here is a list of all available commands');
+                        this.echo('Arguments that need to be provided by you are given in <> brackets');
+                        this.echo('Also enter arguments with proper spacing');
+                        this.echo('');
+                        this.echo('List of commands');
+                        this.echo('');
+                        this.echo('hello <Your name> - Welcome message');
+                        this.echo('link <Complete url> - Provides link to your url');
+                        this.echo('bye - Takes you to google');
+                        this.echo('cat <Width> <Height> - Takes you to google');
+                        this.echo('ayush - Shows my photo');
+                        this.echo('pic <Object> <Width> <Height> - Shows a random picture of "Object" with given width and height');
+                        this.echo('refresh - Refresh the terminal');
+                        this.echo('');
+                    },
+                    // Joke function
+                    joke: function () {
+                        $.ajax({
+                            url: 'https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit',
+                            method: 'GET',
+                            success: function(response) {
+                                var setup = response.setup; // Accessing the URL from the response
+                                var delivery = response.delivery; // Accessing the URL from the response
+                                if(setup == undefined)
+                                {
+                                    this.echo("Network issue. Please try again.")
+                                }
+                                else
+                                {
+                                    this.echo(setup); // Output: the resized image
+                                    this.echo(delivery); // Output: the resized image
+                                }
+                            }.bind(this), // Ensure 'this' refers to the appropriate context
+                            error: function(xhr, status, error) {
+                                this.error('Failed to fetch image:', error);
+                            }.bind(this) // Ensure 'this' refers to the appropriate context
+                        });
+                    },
+                    hello: function (name) {
+                        this.echo('Hello, ' + name + '. Wellcome to this terminal.');
+                        this.echo('');
+                    },
+                    // Function to display a link
+                    link: function (url) {
+                        var link = document.createElement('a');
+                        link.href = 'https://' + url;
+                        link.textContent = 'Link to your url';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+                    },
+                    // Function to directly redirect current web page to a new web page
+                    bye: function () {
+                        window.location.href = 'https://www.google.com';
+                        this.echo('');
+                    },
+                    refresh: function () {
+                        window.location.reload();
+                        this.echo('');
+                    },
+                    // Function to get images of cat of different sizes
+                    cat: function (width, height) {
+                        const img = $('<img src="https://placekitten.com/' +
+                        width + '/' + height + '">');
+                        this.echo(img);
+                        this.echo('');
+                    },
+                    pic: function (object, width, height) {
+                        const img = $('<img src="https://source.unsplash.com/random/'+width+'x'+height+'/?'+ object+'">');
+                        this.echo(img);
+                        this.echo('');
+                    },
+                    ayush: function () {
+                        const img = $('<img src="ayush.jpg" width="100" height="100">');
+                        this.echo(img);
+                        this.echo('');
+                    },
+                },
+                {
+                    // Text which appears at the top
+                    greetings: 'Hi! I am Ayush Kumar Baranwal.'+
+                    '\n'+
+                    'Welcome to my custom Web Terminal'+
+                    '\n'+
+                    'Type help to see a list of all commands'
+                }
+            );
+    </script>
+</body>
+
+</html>

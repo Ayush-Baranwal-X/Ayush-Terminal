@@ -1,0 +1,1 @@
+Hi! This is a custom made terminal made by me using resources from https://terminal.jcubic.pl/
