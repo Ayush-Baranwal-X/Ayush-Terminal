@@ -21,13 +21,18 @@
                         this.echo('');
                         this.echo('List of commands');
                         this.echo('');
-                        this.echo('Im <Your name> - Welcome message');
+                        this.echo('im <Your name> - Welcome message');
                         this.echo('ayush - Shows my photo');
                         this.echo('refresh - Refresh the terminal');
+                        this.echo('clear - Completely clear the whole terminal');
+                        this.echo('joke - Display a joke');
                         this.echo('cat <Width> <Height> - Takes you to google');
                         this.echo('pic <Object> <Width> <Height> - Shows a random picture of "Object" with given width and height');
                         this.echo('link <Complete url> - Provides link to your url');
-                        this.echo('bye - Takes you to google');
+                        this.echo('github - Takes you to my Github profile');
+                        this.echo('linkedin - Takes you to my LinkedIn profile');
+                        this.echo('cv - Takes you to my CV profile');
+                        this.echo('projects - Displays a list of all my projects');
                         this.echo('');
                     },
                     // Joke function
@@ -53,7 +58,11 @@
                             }.bind(this) // Ensure 'this' refers to the appropriate context
                         });
                     },
-                    Im: function (name) {
+                    im: function (name) {
+                        this.echo('Hello, ' + name + '. Wellcome to this terminal.');
+                        this.echo('');
+                    },
+                    projects: function (name) {
                         this.echo('Hello, ' + name + '. Wellcome to this terminal.');
                         this.echo('');
                     },
@@ -67,9 +76,21 @@
                         this.echo('');
                     },
                     // Function to directly redirect current web page to a new web page
-                    bye: function () {
-                        window.location.href = 'https://www.google.com';
-                        this.echo('');
+                    github: function () {
+                        window.location.href = 'https://github.com/Ayush-Baranwal-X';
+                        this.echo('Taking you to my Github Profile');
+                    },
+                    linkedin: function () {
+                        window.location.href = 'https://www.linkedin.com/in/akbiitd';
+                        this.echo('Taking you to my LinkedIn Profile');
+                    },
+                    linkedin: function () {
+                        window.location.href = 'https://www.linkedin.com/in/akbiitd';
+                        this.echo('Taking you to my LinkedIn Profile');
+                    },
+                    cv: function () {
+                        window.location.href = 'https://bit.ly/akbiitd-cv';
+                        this.echo('Taking you to my CV');
                     },
                     refresh: function () {
                         window.location.reload();
@@ -88,7 +109,7 @@
                         this.echo('');
                     },
                     ayush: function () {
-                        const img = $('<img src="ayush.jpg" width="100" height="100">');
+                        const img = $('<img src="ayush.jpg" width="180" height="200">');
                         this.echo(img);
                         this.echo('');
                     },
