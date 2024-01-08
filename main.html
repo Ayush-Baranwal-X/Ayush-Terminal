@@ -23,16 +23,16 @@
                         this.echo('');
                         this.echo('im <Your name> - Welcome message');
                         this.echo('ayush - Shows my photo');
-                        this.echo('refresh - Refresh the terminal');
-                        this.echo('clear - Completely clear the whole terminal');
-                        this.echo('joke - Display a joke');
-                        this.echo('cat <Width> <Height> - Takes you to google');
-                        this.echo('pic <Object> <Width> <Height> - Shows a random picture of "Object" with given width and height');
-                        this.echo('link <Complete url> - Provides link to your url');
                         this.echo('github - Takes you to my Github profile');
                         this.echo('linkedin - Takes you to my LinkedIn profile');
                         this.echo('cv - Takes you to my CV profile');
                         this.echo('projects - Displays a list of all my projects');
+                        this.echo('refresh - Refresh the terminal');
+                        this.echo('clear - Completely clear the whole terminal');
+                        this.echo('joke - Display a joke');
+                        this.echo('cat <Width> <Height> - Displays a cat picture');
+                        this.echo('pic <Object> <Width> <Height> - Shows a random picture of "Object" with given width and height');
+                        this.echo('link <Complete url> - Provides link to your url');
                         this.echo('');
                     },
                     // Joke function
@@ -62,8 +62,77 @@
                         this.echo('Hello, ' + name + '. Wellcome to this terminal.');
                         this.echo('');
                     },
-                    projects: function (name) {
-                        this.echo('Hello, ' + name + '. Wellcome to this terminal.');
+                    projects: function () {
+                        this.echo('Here is a list of most of my major projects');
+                        this.echo('');
+                        var link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X/ayush_mail';
+                        link.textContent = 'Dmail (Email Website)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X/my-first-blog';
+                        link.textContent = 'Ayush\'s Blog (Blog Website)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X/Real-Estate-Price-Prediction';
+                        link.textContent = 'Real Estate Price Prediction (ML Model)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X/Credit-Card-Fraud-Detection';
+                        link.textContent = 'Credit Card Fraud Detection (ML Model)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X/Handwritten-Digit-Recognition';
+                        link.textContent = 'Handwritten-Digit-Recognition (ML Model)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://ayushbaranwal.itch.io/driverclub';
+                        link.textContent = 'Driver Club (Racing Game)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://ayushbaranwal.itch.io/wonderland';
+                        link.textContent = 'Wonderland (Open World Shooting Game)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X/Quiz';
+                        link.textContent = 'Quiz (Android App)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X/Cookie-Clicker-Bot';
+                        link.textContent = 'Cookie Clicker (Bot)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
+                        this.echo('');
+
+                        link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X/Dmail-Scraper';
+                        link.textContent = 'Dmail Scraper (Web Scraper)';
+                        link.target = '_blank'; // Open link in a new tab
+                        this.echo(link);
                         this.echo('');
                     },
                     // Function to display a link
