@@ -9,6 +9,7 @@
 
 <body>
     <script>
+        var name = "";
         $('body').terminal
             (
                 {
@@ -17,7 +18,7 @@
                         this.echo('');
                         this.echo('Here is a list of all available commands');
                         this.echo('Arguments that need to be provided by you are given in <> brackets');
-                        this.echo('Also enter arguments with proper spacing');
+                        this.echo('Enter the arguments with proper spacing');
                         this.echo('');
                         this.echo('List of commands');
                         this.echo('');
@@ -58,8 +59,20 @@
                             }.bind(this) // Ensure 'this' refers to the appropriate context
                         });
                     },
+                    date: function () {
+                        var today = new Date();
+                        var dd = String(today.getDate()).padStart(2, '0');
+                        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                        var yyyy = today.getFullYear();
+
+                        today = mm + '/' + dd + '/' + yyyy;
+                        this.echo(today);
+                        this.echo('');
+                    },
+                    
                     im: function (name) {
-                        this.echo('Hello, ' + name + '. Wellcome to this terminal.');
+                        name = name;
+                        this.echo('Hello, ' + name + '. Welcome to this terminal.');
                         this.echo('');
                     },
                     projects: function () {
