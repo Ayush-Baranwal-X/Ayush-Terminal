@@ -6584,8 +6584,8 @@
             wrongPasswordTryAgain: "Wrong username or password try again!",
             wrongPassword: "Wrong username or password!",
             ajaxAbortError: "Error while aborting ajax call!",
-            wrongArity: "Wrong number of arguments. Function '%s' expects %s got" + " %s!",
-            commandNotFound: "Command '%s' is not Found! Type help to see a list of all commands.",
+            wrongArity: "Wrong number of arguments. Function '%s' expects %s got" + " %s!\n",
+            commandNotFound: "Command '%s' is not Found! Type help to see a list of all commands.\n",
             oneRPCWithIgnore: "You can use only one rpc with describe == false " + "or rpc without system.describe",
             oneInterpreterFunction: "You can't use more than one function (rpc " + "without system.describe or with option describe == false count" + "s as one)",
             loginFunctionMissing: "You didn't specify a login function",
@@ -6867,7 +6867,8 @@
                 var i = get_type(r);
                 if (i === "function") {
                     if (o && r.length !== n.args.length) {
-                        g.error("&#91;Arity&#93; " + sprintf(c().wrongArity, n.name, r.length, n.args.length))
+                        g.error(sprintf(c().wrongArity, n.name, r.length, n.args.length))
+                        // g.error("&#91;Arity&#93; " + sprintf(c().wrongArity, n.name, r.length, n.args.length))
                     } else {
                         return r.apply(g, n.args)
                     }
@@ -6945,7 +6946,8 @@
                                 var t = Array.prototype.slice.call(arguments);
                                 var n = t.length + (e ? 1 : 0);
                                 if (C.checkArity && i.params && i.params.length !== n) {
-                                    g.error("&#91;Arity&#93; " + sprintf(c().wrongArity, i.name, i.params.length, n))
+                                    g.error(sprintf(c().wrongArity, i.name, i.params.length, n))
+                                    // g.error("&#91;Arity&#93; " + sprintf(c().wrongArity, i.name, i.params.length, n))
                                 } else {
                                     g.pause(C.softPause);
                                     if (e) {
