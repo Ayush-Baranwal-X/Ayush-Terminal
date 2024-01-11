@@ -16,6 +16,7 @@ $('body').terminal
                 this.echo('github - Takes you to my Github profile');
                 this.echo('linkedin - Takes you to my LinkedIn profile');
                 this.echo('cv - Takes you to my CV profile');
+                this.echo('email - Send me an email');
                 this.echo('projects - Displays a list of all my projects');
                 this.echo('date - Displays the current');
                 this.echo('refresh - Refresh the terminal');
@@ -136,6 +137,14 @@ $('body').terminal
                 this.echo('');
             },
             // Function to display a link
+            ls: function () {
+                this.echo("root     about     github     projects     linkedin     cv");
+                this.echo('');
+            },
+            cd: function (folder) {
+                this.echo("Sorry, you can't leave. You are trapped in this directory :)");
+                this.echo('');
+            },
             link: function (url) {
                 var link = document.createElement('a');
                 link.href = 'https://' + url;
