@@ -6487,8 +6487,12 @@
     $.terminal.nested_formatting.__meta__ = true;
     $.terminal.nested_formatting.__inherit__ = true;
     $.terminal.nested_formatting.__no_warn__ = true;
+    var promptx = "ayush_terminal"
     $.terminal.defaults = {
-        prompt: "> ",
+        // prompt: "> ",
+        // Modified the following statement to change
+        
+        prompt: promptx+"> ",
         history: true,
         exit: true,
         clear: true,
