@@ -28,6 +28,7 @@
                         this.echo('linkedin - Takes you to my LinkedIn profile');
                         this.echo('cv - Takes you to my CV profile');
                         this.echo('projects - Displays a list of all my projects');
+                        this.echo('date - Displays the current');
                         this.echo('refresh - Refresh the terminal');
                         this.echo('clear - Completely clear the whole terminal');
                         this.echo('joke - Display a joke');
@@ -159,20 +160,28 @@
                     },
                     // Function to directly redirect current web page to a new web page
                     github: function () {
-                        window.location.href = 'https://github.com/Ayush-Baranwal-X';
-                        this.echo('Taking you to my Github Profile');
+                        var link = document.createElement('a');
+                        link.href = 'https://github.com/Ayush-Baranwal-X';
+                        link.textContent = 'Link to your url';
+                        link.target = '_blank'; // Open link in a new tab
+                        link.click();
+                        this.echo('Welcome back to Terminal');
                     },
                     linkedin: function () {
-                        window.location.href = 'https://www.linkedin.com/in/akbiitd';
-                        this.echo('Taking you to my LinkedIn Profile');
-                    },
-                    linkedin: function () {
-                        window.location.href = 'https://www.linkedin.com/in/akbiitd';
-                        this.echo('Taking you to my LinkedIn Profile');
+                        var link = document.createElement('a');
+                        link.href = 'https://www.linkedin.com/in/akbiitd';
+                        link.textContent = 'Link to your url';
+                        link.target = '_blank'; // Open link in a new tab
+                        link.click();
+                        this.echo('Welcome back to Terminal');
                     },
                     cv: function () {
-                        window.location.href = 'https://bit.ly/akbiitd-cv';
-                        this.echo('Taking you to my CV');
+                        var link = document.createElement('a');
+                        link.href = 'https://bit.ly/akbiitd-cv';
+                        link.textContent = 'Link to your url';
+                        link.target = '_blank'; // Open link in a new tab
+                        link.click();
+                        this.echo('Welcome back to Terminal');
                     },
                     refresh: function () {
                         window.location.reload();
