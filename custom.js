@@ -150,8 +150,29 @@ $('body').terminal
                 link.href = 'https://' + url;
                 link.textContent = 'Link to your url';
                 link.target = '_blank'; // Open link in a new tab
+                link.click();
                 this.echo(link);
                 this.echo('');
+            },
+            weather: function (city) {
+                $.ajax({
+                    url: 'https://wttr.in/'+city+'?T',
+                    method: 'GET',
+                    success: function (response) {
+                        var index1 = response.indexOf('<pre>')+6;
+                        var index2 = response.indexOf('</pre>');
+                        var img = response.substring(index1,index2); // Accessing the URL from the response
+                        if (img == undefined) {
+                            this.echo("Network issue. Please try again.")
+                        }
+                        else {
+                            this.echo(img); // Output: the resized image
+                        }
+                    }.bind(this), // Ensure 'this' refers to the appropriate context
+                    error: function (xhr, status, error) {
+                        this.error('Failed to fetch image:', error);
+                    }.bind(this) // Ensure 'this' refers to the appropriate context
+                });
             },
             // Function to directly redirect current web page to a new web page
             github: function () {
