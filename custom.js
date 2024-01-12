@@ -19,6 +19,7 @@ $('body').terminal
                 this.echo('email - Send me an email');
                 this.echo('projects - Displays a list of all my projects');
                 this.echo('date - Displays the current');
+                this.echo('weather <city_name> - Shows the weather in the given city (city name should be a single word)');
                 this.echo('refresh - Refresh the terminal');
                 this.echo('clear - Completely clear the whole terminal');
                 this.echo('joke - Display a joke');
@@ -41,10 +42,12 @@ $('body').terminal
                         else {
                             this.echo(setup); // Output: the resized image
                             this.echo(delivery); // Output: the resized image
+                            this.echo('')
                         }
                     }.bind(this), // Ensure 'this' refers to the appropriate context
                     error: function (xhr, status, error) {
-                        this.error('Failed to fetch image:', error);
+                        this.echo("Network issue. Please try again.")
+                        // this.error('Failed to fetch image:', error);
                     }.bind(this) // Ensure 'this' refers to the appropriate context
                 });
             },
@@ -136,7 +139,6 @@ $('body').terminal
                 this.echo(link);
                 this.echo('');
             },
-            // Function to display a link
             ls: function () {
                 this.echo("root     about     github     projects     linkedin     cv");
                 this.echo('');
@@ -145,6 +147,7 @@ $('body').terminal
                 this.echo("Sorry, you can't leave. You are trapped in this directory :)");
                 this.echo('');
             },
+            // Function to display a link
             link: function (url) {
                 var link = document.createElement('a');
                 link.href = 'https://' + url;
@@ -154,6 +157,7 @@ $('body').terminal
                 this.echo(link);
                 this.echo('');
             },
+            // Complete this
             weather: function (city) {
                 $.ajax({
                     url: 'https://wttr.in/'+city+'?T',
@@ -167,10 +171,12 @@ $('body').terminal
                         }
                         else {
                             this.echo(img); // Output: the resized image
+                            this.echo("Follow @igor_chubin for wttr.in updates")
                         }
                     }.bind(this), // Ensure 'this' refers to the appropriate context
                     error: function (xhr, status, error) {
-                        this.error('Failed to fetch image:', error);
+                        this.echo("Network issue. Please try again.")
+                        // this.error('Failed to fetch image:', error);
                     }.bind(this) // Ensure 'this' refers to the appropriate context
                 });
             },
