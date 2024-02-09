@@ -18,6 +18,7 @@ $('body').terminal
                 this.echo('cv - Takes you to my CV profile');
                 this.echo('email - Send me an email');
                 this.echo('projects - Displays a list of all my projects');
+                this.echo('portfolio - Displays a list of all my projects');
                 this.echo('date - Displays the current');
                 this.echo('weather <city_name> - Shows the weather in the given city (city name should be a single word)');
                 this.echo('refresh - Refresh the terminal');
@@ -137,6 +138,15 @@ $('body').terminal
                 link.textContent = 'Dmail Scraper (Web Scraper)';
                 link.target = '_blank'; // Open link in a new tab
                 this.echo(link);
+                this.echo('');
+            },
+            portfolio: function () {
+                var link = document.createElement('a');
+                link.href = 'https://ayush-baranwal-x.github.io/';
+                link.textContent = 'Link to your url';
+                link.target = '_blank'; // Open link in a new tab
+                link.click();
+                this.echo('Welcome back to Terminal');
                 this.echo('');
             },
             ls: function () {
