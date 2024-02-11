@@ -265,6 +265,6 @@ $('body').terminal
             greetings: 'Hi! I am Ayush Kumar Baranwal.\n' +
                 'Welcome to my custom Web Terminal\n' +
                 'Type help to see a list of all commands\n'+
-                '(If on android : Click on the 3 dots at the top right and enable desktop site from there to use the terminal)\n'
+                '(If on android : Enable desktop site to use the terminal. Click on the 3 dots at the top right and enable desktop site)\n'
         }
     );
