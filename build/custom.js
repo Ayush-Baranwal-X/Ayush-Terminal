@@ -23,10 +23,12 @@ $('body').terminal
                 this.echo('weather <city_name> - Shows the weather in the given city (city name should be a single word)');
                 this.echo('refresh - Refresh the terminal');
                 this.echo('clear - Completely clear the whole terminal');
+                this.echo('banner - Displays the initial welcome banner');
                 this.echo('joke - Display a joke');
                 this.echo('cat <Width> <Height> - Displays a cat picture');
                 this.echo('pic <Object> <Width> <Height> - Shows a random picture of "Object" with given width and height');
                 this.echo('link <Complete url> - Provides link to your url');
+                this.echo('exit - Close the terminal');
                 this.echo('');
             },
             // Joke function
@@ -157,6 +159,13 @@ $('body').terminal
                 this.echo("Sorry, you can't leave. You are trapped in this directory :)");
                 this.echo('');
             },
+            banner: function () {
+                this.echo('');
+                this.echo("Hi! I am Ayush Kumar Baranwal.");
+                this.echo("Welcome to my custom Web Terminal");
+                this.echo("Type help to see a list of all commands");
+                this.echo('');
+            },
             // Function to display a link
             link: function (url) {
                 var link = document.createElement('a');
@@ -166,6 +175,9 @@ $('body').terminal
                 link.click();
                 this.echo(link);
                 this.echo('');
+            },
+            exit: function () {
+                window.close();
             },
             // Complete this
             weather: function (city) {
@@ -252,6 +264,7 @@ $('body').terminal
             // Text which appears at the top
             greetings: 'Hi! I am Ayush Kumar Baranwal.\n' +
                 'Welcome to my custom Web Terminal\n' +
-                'Type help to see a list of all commands\n'
+                'Type help to see a list of all commands\n'+
+                '(If on android : Click on the 3 dots at the top right and enable desktop site from there to use the terminal)\n'
         }
     );
