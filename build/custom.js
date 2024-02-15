@@ -60,7 +60,7 @@ $('body').terminal
                 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
                 var yyyy = today.getFullYear();
 
-                today = mm + '/' + dd + '/' + yyyy;
+                today = dd + '/' + mm + '/' + yyyy;
                 this.echo(today);
                 this.echo('');
             },
